@@ -58,7 +58,7 @@ Here, it can't find the right one. So, it'll just tell you that it found it on t
 
 ## Troubleshooting
 
-If check-spelling told you which line caused the problem, you can skip straight to [reducing patterns](#reducing-patterns).
+If check-spelling told you which line caused the problem, you can skip straight to [reducing patterns](#reducingpatterns).
 
 ### Reducing file scope
 
@@ -94,7 +94,7 @@ Keep commenting out entries until it does. When it does, uncomment some entries 
 
 ### Analysis
 
-Once you have something like the [example input](#example-input), you'll get to think through the pattern.
+Once you have something like the [example input](#exampleinput), you'll get to think through the pattern.
 
 In the example, `[a-z,0-9]{12}` is designed to match 12 characters (including a comma??), but it doesn't care if the characters it found are exactly 12, or merely a substring of a longer run of characters. That meant that `vulnerabilities` was matched as:
 
@@ -113,3 +113,6 @@ Here, adding some `\b`s will work magic:
 -[a-z,0-9]{12}
 +\b[a-z,0-9]{12}\b
 ```
+
+---
+[FAQ](FAQ.md) | [Showcase](Showcase.md) | [Event descriptions](Event-descriptions.md) | [Configuration information](Configuration-information.md) | [Known Issues](Known-Issues.md) | [Possible features](Possible-features.md) | [Deprecations](Deprecations.md) | [Release notes](Release-notes.md) | [Helpful scripts](Helpful-scripts.md)
